@@ -1,16 +1,20 @@
-import './Navbar.css'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-const Navbar = () => {
+const BasicNavbar = () => {
     return (
-        <nav className='Navbar'>
-            <h1 className=''>Ecommerce</h1>
-            <div style={{ backgroundColor: '#ffee00', display: 'flex'}}>
-                <button onClick={() => {console.log('hizo click')}}>Celulares</button>
-                <button onClick={() => {console.log('hizo click')}}>Tablet</button>
-                <button onClick={() => {console.log('hizo click')}}>Notebook</button>
-            </div>
-        </nav>
+        <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="#home">Diamond System</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#PCs">PCs Armadas</Nav.Link>
+            <Nav.Link href="#Componentes">Componentes de PC</Nav.Link>
+            <Nav.Link href="#Notebooks">Notebooks</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>     
     )
 }
 
-export default Navbar
+export default BasicNavbar
