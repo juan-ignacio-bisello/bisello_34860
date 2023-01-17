@@ -1,0 +1,20 @@
+.details {
+    padding: 30px;
+    margin: 30px;
+    font-size: 10px;
+    background-color: #e6d2eb;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    display: 'inline';
+    width: 650px;
+    justify-content: center;
+}
+
+.image {
+    justify-content: center;
+    width: 250px;
+}
+
+.fonts {
+    font-size: 14px;
+}

@@ -1,22 +1,24 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import Cartwidget from '../CartWidget/CartWidget';
+import './Navbar.css'
+import { Link, NavLink } from 'react-router-dom'
 
-const BasicNavbar = () => {
+const Navbar = () => {
     return (
-        <Navbar bg="light" variant="light">
-        <Container>
-          <Navbar.Brand href="#home">Diamond System</Navbar.Brand>
+        <Container className='navbar'>
+          <Link to='/'>
+            <h1 className="title">Diamond System</h1>
+          </Link>
           <Nav className="me-auto">
-            <Nav.Link href="#PCs">PCs Armadas</Nav.Link>
-            <Nav.Link href="#Componentes">Componentes de PC</Nav.Link>
-            <Nav.Link href="#Notebooks">Notebooks</Nav.Link>
+            <NavLink className={ ({isActive}) => isActive ? 'ActiveOption' : 'Option'} to={`/category/pcs-armadas`}>PCs Armadas</NavLink>
+            <NavLink className={ ({isActive}) => isActive ? 'ActiveOption' : 'Option'} to={`/category/componetes-pc`}>Componentes de PC</NavLink>
+            <NavLink className={ ({isActive}) => isActive ? 'ActiveOption' : 'Option'} to={`/category/notebooks`}>Notebooks</NavLink>
           </Nav>
+          <Cartwidget/>
         </Container>
-        <Cartwidget/>
-      </Navbar>     
+
     )
 }
 
-export default BasicNavbar
+export default Navbar

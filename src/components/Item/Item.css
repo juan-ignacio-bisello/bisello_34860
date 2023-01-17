@@ -1,0 +1,20 @@
+.CardItem {
+    padding: 30px;
+    margin: 30px;
+    font-size: 10px;
+    background-color: papayawhip;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    display: 'flex';
+    width: 300px;
+    justify-content: center;
+}
+
+.ItemFooter {
+    display: flex;
+    justify-content: center;
+}
+
+.Price {
+    font-size: 15px;
+}
