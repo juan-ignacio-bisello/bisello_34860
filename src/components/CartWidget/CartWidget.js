@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import './CartWidget.css'
 
 const Cartwidget = () => {
