@@ -5,7 +5,7 @@
     background-color: #e6d2eb;
     border: 1px solid #e1e1e1;
     border-radius: 10px;
-    display: 'inline';
+    display: 'flex';
     width: 650px;
     justify-content: center;
 }

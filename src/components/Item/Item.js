@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import './Item.css'
 import Card from 'react-bootstrap/Card';
+import { useContext } from 'react';
+import { CartContext } from '../../contex/CartContex'
 
 
 const Item = ({id, name, img, price}) => {
@@ -10,6 +12,8 @@ const Item = ({id, name, img, price}) => {
         console.log('hice click en item')
     }
 
+    const value = useContext(CartContext)
+    console.log(value)
     return (
         <Card className='CardItem' onClick={handleOnClick}>
             <Card.Title>

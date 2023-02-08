@@ -3,7 +3,7 @@ import { getProductById } from '../../asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({ setCart }) => {
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
 
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
     return(
         <div>
             <h1>Detalle {product.name}</h1>
-            <ItemDetail {...product}/>
+            <ItemDetail {...product} setCart={setCart}/>
         </div>
     )
 }

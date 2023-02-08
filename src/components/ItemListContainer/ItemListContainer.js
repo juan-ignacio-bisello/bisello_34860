@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { getProducts, getProductsByCategory } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-import './ItemListContainer'
+import './ItemListContainer.css'
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -11,24 +11,24 @@ const ItemListContainer = ({ greeting }) => {
 
     const { categoryId } = useParams()
 
-    useEffect(() => {
-        const onResize = (event) => {
-            console.log(event)
-            console.log('cambie tamaño de pantalla')
-        }
+    // useEffect(() => {
+    //     const onResize = (event) => {
+    //         console.log(event)
+    //         console.log('cambie tamaño de pantalla')
+    //     }
 
-        const onResize2 = () => {
-            console.log('otra cosa')
-        }
+    //     const onResize2 = () => {
+    //         console.log('otra cosa')
+    //     }
 
-        window.addEventListener('resize', onResize)
-        window.addEventListener('resize', onResize2)
+    //     window.addEventListener('resize', onResize)
+    //     window.addEventListener('resize', onResize2)
 
-        return () => {
-            window.removeEventListener('resize', onResize) 
-            window.removeEventListener('resize', onResize2)
-        }
-    }, [])
+    //     return () => {
+    //         window.removeEventListener('resize', onResize) 
+    //         window.removeEventListener('resize', onResize2)
+    //     }
+    // }, [])
 
     useEffect(() => {
         document.title = 'Todos los productos'
