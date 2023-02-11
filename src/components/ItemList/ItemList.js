@@ -1,5 +1,5 @@
 import Item from "../Item/Item"
-
+import { memo } from "react"
 const ItemList = ({ products }) => {
     return(
         <div className='ListGroup' onClick={() => console.log('hice click en itemlist')}>
@@ -8,4 +8,4 @@ const ItemList = ({ products }) => {
     )
 }
 
-export default ItemList
+export default memo(ItemList)

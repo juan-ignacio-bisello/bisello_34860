@@ -3,23 +3,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
 import './ItemDetail.css'
 import { CartContext } from '../../contex/CartContex'
-
-const InputCount = ({onConfirm, stock, initial= 1}) => {
-    const [count, setCount] = useState(initial)
-
-    const handleChange = (e) => {
-        if(e.target.value <= stock) {
-            setCount(e.target.value)
-        }
-    }
-
-    return (
-        <div>
-            <input type='number' onChange={handleChange} value={count}/>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
-        </div>
-    )
-}
+import { NotificationContext } from '../../notification/NotificationService'
 
 const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
     const [count, setCount] = useState(initial)
@@ -48,26 +32,24 @@ const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
 
 
 const ItemDetail = ({ id, name, category, img, price, stock, description, setCart}) => {
-    const [inputType, setInputType] = useState('input')
-    const [quantity, setQuantity] = useState(0)
+    // const [quantity, setQuantity] = useState(0)
 
-    const ItemCount = inputType === 'input' ? InputCount : ButtonCount
+    const ItemCount = ButtonCount
 
     const { addItem, isInCart } = useContext(CartContext)
+    const setNotification = useContext(NotificationContext)
 
     const handleOnAdd = (quantity) => {
-        console.log('agregue al carrito: ', quantity)
+        console.log('Agregue al carrito: ', quantity)
 
-        setQuantity(parseInt(quantity))
+        // setQuantity(parseInt(quantity))
 
         addItem({ id, name, price, quantity })
+        setNotification(`se agrego correctamente ${quantity} ${name}`)
     }
 
     return (
         <article className='details' >
-            <button onClick={() => setInputType(inputType === 'input' ? 'button' : 'input')}>
-                Cambiar contador
-            </button>
             <header>
                 <h2>
                     {name}

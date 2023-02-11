@@ -1,0 +1,14 @@
+.list-cart {
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+}
+
+.list {
+    display: block;
+    justify-content: space-around;
+}
+
+h5 {
+    background-color: lightgrey;
+}
+

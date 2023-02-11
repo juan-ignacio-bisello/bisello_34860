@@ -1,8 +1,23 @@
 .Cartwidget {
     height: 70px;
-    width: 60px;
+    width: 80px;
     margin: 3px;
     background-color: blueviolet;
+    color: black;
+    border-radius: 8px;
+    flex: none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: left;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+    font-size: x-large;
 }
 
 .imag {
@@ -10,8 +25,4 @@
     width: 40px;
     display: flex;
     margin-left: 8px;
-}
-
-.text {
-    display: block;
 }
