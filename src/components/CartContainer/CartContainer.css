@@ -1,6 +1,6 @@
 .list-cart {
     border-radius: 10px;
-    border: 1px solid #e1e1e1;
+    border: 2px solid #e1e1e1;
 }
 
 .list {
@@ -9,6 +9,24 @@
 }
 
 h5 {
-    background-color: lightgrey;
+    background-color: #e1e1e1;
 }
 
+.list-class {
+    width: 25%;
+    display:inline-table;
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+.list-total {
+    display: flex;
+    justify-content: right;
+    margin-right: 8%;
+}
+
+.list-title {
+    font-size: 20px;
+    font-weight: bold;
+}
