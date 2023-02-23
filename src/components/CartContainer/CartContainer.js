@@ -13,18 +13,76 @@ const CartContainer = () => {
         <div>
             <h1>Cart</h1>
             <div className='list-cart'>
-                <h3 className='list'>Nombre</h3>
-                {
-                    cart.map(prod => {
-                        return (
-                            <div>
-                                <h5 key={prod.id}>{ prod.name }</h5>
-                            </div>
-                            
-                        )
-                    })
-                }
-                <h4> Total:${ total }</h4>
+                <ul className="list-class">
+                    <li className="list-title">Nombre</li>
+                    <li>{
+                        cart.map(prod => {
+
+                            return (
+                                <div>
+                                    <h5 key={prod.id}>{ prod.name }</h5>
+                                </div>
+
+                            )
+                        })
+                    }
+                    </li>
+                </ul>
+
+                <ul className="list-class">
+                    <li className="list-title">Cantidad</li>
+                    <li>
+                        {
+                            cart.map(prod => {
+
+                                return (
+                                    <div>
+                                        <h5 key={prod.id}>{ prod.quantity }</h5>
+                                    </div>
+
+                                )
+                            })
+                        }
+                    </li>
+                </ul>
+
+                <ul className="list-class">
+                    <li className="list-title">Precio C/A</li>
+                    <li>
+                        {
+                            cart.map(prod => {
+
+                                return (
+                                    <div>
+                                        <h5 key={prod.id}>${ prod.price }</h5>
+                                    </div>
+
+                                )
+                            })
+                        }
+                    </li>
+                </ul>
+
+                <ul className="list-class">
+                    <li className="list-title">Subtotal</li>
+                    <li>
+                        {
+                            cart.map(prod => {
+
+                                let subTotal = prod.price * prod.quantity
+
+                                return (
+                                    <div>
+                                        <h5 key={prod.id}>${ subTotal }</h5>
+                                    </div>
+
+                                )
+                            })
+                        }
+                    </li>
+                </ul>
+
+                <h4 className="list-total"> Total: ${ total }</h4>
             </div>
             <Link to='/checkout'>Checkout</Link>
         </div>
