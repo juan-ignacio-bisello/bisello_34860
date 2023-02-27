@@ -16,16 +16,16 @@ function ContactForm() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        Nombre:
+        <input type="text" required value={name} onChange={(e) => setName(e.target.value)} />
       </label>
       <label>
-        Number:
-        <input type="text" value={number} onChange={(e) => setNumber(e.target.value)} />
+        Numero:
+        <input type="text" required value={number} onChange={(e) => setNumber(e.target.value)} />
       </label>
       <label>
         Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
       </label>
       <button type="submit">Submit</button>
     </form>
